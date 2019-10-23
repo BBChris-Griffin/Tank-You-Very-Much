@@ -10,6 +10,7 @@ public class TankControls : MonoBehaviour
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
     private AudioSource audio;
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +50,18 @@ public class TankControls : MonoBehaviour
             }
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            score++;
+        }
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }
