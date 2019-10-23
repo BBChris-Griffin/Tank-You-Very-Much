@@ -20,6 +20,6 @@ public class Scoreboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreBoard.text = p1.GetScore() + " - " + p2.GetScore();
+        scoreBoard.text = p2.GetScore() + " - " + p1.GetScore();
     }
 }
