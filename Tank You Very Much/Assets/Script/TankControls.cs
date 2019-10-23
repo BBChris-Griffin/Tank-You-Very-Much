@@ -23,7 +23,7 @@ public class TankControls : MonoBehaviour
             float translationY = Input.GetAxis("Vertical") * -speed * Time.deltaTime;
             this.transform.Translate(translationY, translationX, 0);
 
-            if(Input.GetButton("Fire1"))
+            if(Input.GetButtonDown("Fire1"))
             {
                 // Prevents rapid fire
                 nextFire = Time.time + fireRate;
@@ -36,7 +36,7 @@ public class TankControls : MonoBehaviour
             float translationY = Input.GetAxis("Vertical2") * speed * Time.deltaTime;
             this.transform.Translate(translationY, translationX, 0);
 
-            if (Input.GetButton("Fire2"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 // Prevents rapid fire
                 nextFire = Time.time + fireRate;
