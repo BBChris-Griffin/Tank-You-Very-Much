@@ -9,9 +9,11 @@ public class TankControls : MonoBehaviour
     public Transform bulletSpawn;
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
+    private AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class TankControls : MonoBehaviour
                 // Prevents rapid fire
                 nextFire = Time.time + fireRate;
                 Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+                audio.Play();
             }
         }
         if (this.tag == "P2")
@@ -41,6 +44,8 @@ public class TankControls : MonoBehaviour
                 // Prevents rapid fire
                 nextFire = Time.time + fireRate;
                 Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+                audio.Play();
+
             }
         }
         
